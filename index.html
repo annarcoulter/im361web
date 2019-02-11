@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>My Vue Project</title>
+    <title>Café Meow</title>
   </head>
   <body>
     <div id="app">
       {{ message }}
 
-    <p><button v-on:click="counter += 1">Add pig</button></p>
-      <p>there are now {{counter}} pigs.</p>
+    <p><button v-on:click="counter += 2">Covfefe - $2</button></p>
+    <p><button v-on:click="counter += 4">Muffin - $4</button></p>
+    <p><button v-on:click="counter += 10">An entire cat - $10</button></p>
+      <p>Your total is ${{counter}}.</p>
 
     </div>
     <script src="dist/main.js" type="text/javascript"></script>

@@ -1,1 +1,116 @@
-p {color:red;}
+body{									/*GLOBAL STYLES*/
+ background-color:#C4FFFF;
+ color:#0294AE;
+ font-size:18px;
+ font-family: 'Open Sans Condensed', sans-serif;
+ /*background-image:url("images/bg.png");*/
+}
+
+h2 {
+  color:#E98032;
+}
+
+.container{								/*CONTAINER STYLES*/
+	background-color:#ECFFFF;
+	border:8px solid #0294AE;
+  border-bottom:none;
+	width:60%;
+	margin:0 auto;
+	margin-top:6%;
+	margin-bottom:12%;
+}
+
+.header img{ 								/*HEADER IMAGE STYLES*/
+	width:100%;
+	box-shadow: 0px 58px 0px #0294AE;
+
+}
+
+.navbar{ 									/*NAVIGATION STYLES*/
+	box-shadow: 0px 7px 15px #0294AE;
+}
+
+.navbar a{									/*NAVIGATION LINK STYLES*/
+	display:inline-block;
+	text-align:center;
+	color:white;
+	text-decoration:none;
+	padding: 15px 35.5px;
+
+}
+
+.navbar li{ 									/*NAVIGATION BUTTON STYLES*/
+	float:left;
+
+}
+
+.navbar a:hover:not(.active){						/*NAVIGATION LINK HOVER STYLES*/
+	background-color:#76CDE4;
+}
+
+.navbar ul{ 									/*NAVIGATION LIST STYLES*/
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background-color:#0294AE;
+	position:relative;
+	top:0;
+	width:100%;
+}
+
+.content { 									/*BODYCOPY MARGIN*/
+	margin:8%;
+}
+
+.content p{ 									/*PARAGRAPH INDENT*/
+	text-indent:35px;
+}
+
+.content a{ 										/*LINK STYLES*/
+	font-weight:bold;
+	color:#34577B;
+}
+
+.content a:hover:not(.active){						/*LINK HOVER STYLES*/
+	color:#1cbeda;
+}
+
+.content h1{									/*HEADING 1 STYLES*/
+	text-align:center;
+	margin-top:5%;
+	text-indent:none;
+}
+
+.content img{									/*IMAGE STYLES*/
+	height:200px;
+	border:5px solid #1cbeda;
+}
+
+
+.footer{							/*FOOTER STYLES*/
+	background-color:#0294AE;
+	color:white;
+	position:relative;
+	bottom:0%;
+	padding:5px 10px 0px 10px;
+	font-size:16px;
+	box-shadow: 0px -7px 15px #0294AE;
+}
+
+.social{
+
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: inherit;
+  }
+}
+.animated {
+  animation-duration: 1s;
+  animation-name: fadein;
+}

@@ -1,59 +1,80 @@
 <!doctype html>
 <html lang="en-US">
   <head>
+    <link rel="stylesheet" type="text/css" href="src/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Café Meow</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
   </head>
   <body>
-
-<div class="header">
-  <h1>Café Meow</h1>
-  <!--header image/index link-->
-</div>
-
-<div class="navigation">
-  <ul>
-    <li><a href="">Menu</a></li>
-      <li><a href="">Our Cats</a></li>
-        <li><a href="">About Us</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
-</div>
-
+<div id="app">
 <div class="container">
-  <!--eventually holds all my shit-->
-</div>
+
+<header class="header">
+  <!--header image/index link-->
+
+
+<a href="index.html"><img src="images/header.png" alt="Café Meow"></a>
+<nav class="navbar">
+<ul>
+<li><a href="#index" v-on:click="pagename = 'Home'">Home</a></li>
+<li><a href="#menu" v-on:click="pagename = 'Menu'">Menu</a></li>
+<li><a href="#adopt" v-on:click="pagename = 'Adopt'">Adopt</a></li>
+<li><a href="#contact" v-on:click="pagename = 'Contact'">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<main v-bind:hidden="pagename != 'Home'" class="animated">
 
 <div class="content"> <!--some images and stuff in here probably-->
   <h2>Welcome to Café Meow!</h2>
-  <p>Café Meow! is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
+  <p>Café Meow is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
   <p>All of our cats are available for adoption. Come down and meet your future feline!</p>
 </div>
+</main>
 
-<div class="footer">
-  <h4>Social Media</h4>
+<main v-bind:hidden="pagename != 'Menu'" class="animated">
+
+<div class="content"> <!--some images and stuff in here probably-->
+  <h2>Menu</h2>
+  <p>Café Meow is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
+  <p>All of our cats are available for adoption. Come down and meet your future feline!</p>
+</div>
+</main>
+
+<main v-bind:hidden="pagename != 'Adopt'" class="animated">
+
+<div class="content"> <!--some images and stuff in here probably-->
+  <h2>Adopt</h2>
+  <p>Café Meow is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
+  <p>All of our cats are available for adoption. Come down and meet your future feline!</p>
+</div>
+</main>
+
+<main v-bind:hidden="pagename != 'Contact'" class="animated">
+
+<div class="content"> <!--some images and stuff in here probably-->
+  <h2>Contact Us</h2>
+  <p>Café Meow is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
+  <p>All of our cats are available for adoption. Come down and meet your future feline!</p>
+</div>
+</main>
+
+<footer class="footer">
+  <div class="social"><h4>Social Media</h4>
   <ul>
     <li>Facebook</li>
     <li>Instagram</li>
+    <li>Twitter</li>
   </ul>
-
+</div>
+</footer>
 </div>
 
-
-
-
-
-    <!--
-    <div id="app">
-      {{ message }}
-
-    <p><button v-on:click="counter += 2">Covfefe - $2</button></p>
-    <p><button v-on:click="counter += 4">Muffin - $4</button></p>
-    <p><button v-on:click="counter += 10">An entire cat - $10</button></p>
-      <p>Your total is ${{counter}}.</p>
-
     </div>
-    <script src="./dist/main.js" type="text/javascript"></script> -->
+    <script src="./dist/main.js" type="text/javascript"></script>
+
   </body>
 </html>

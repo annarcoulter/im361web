@@ -1,75 +1,107 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <link rel="stylesheet" type="text/css" href="src/style.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Café Meow</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-  </head>
-  <body>
-<div id="app">
-<div class="container">
-
-<header class="header">
-  <!--header image/index link-->
 
 
-<a href="index.html"><img src="images/header.png" alt="Café Meow"></a>
-<nav class="navbar">
-<ul>
-<li><a href="#index" v-on:click="pagename = 'Home'">Home</a></li>
-<li><a href="#menu" v-on:click="pagename = 'Menu'">Menu</a></li>
-<li><a href="#adopt" v-on:click="pagename = 'Adopt'">Adopt</a></li>
-<li><a href="#contact" v-on:click="pagename = 'Contact'">Contact</a></li>
-</ul>
-</nav>
-</header>
+<head>
+  <link rel="stylesheet" type="text/css" href="src/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Café Meow</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+</head>
 
+
+<body background="images/bg.png">
+  <div id="app">
+    <div class="container"> <!-- holds all my shit so there can be a background-->
+
+
+      <header class="header"> <!--holds header and navigation so its not ugly-->
+        <a href="index.html"><img src="images/header.png" alt="Café Meow"></a>
+        <nav class="navbar">
+          <ul>
+            <li><a href="#index" v-on:click="pagename = 'Home'">Home</a></li>
+            <li><a href="#menu" v-on:click="pagename = 'Menu'">Menu</a></li>
+            <li><a href="#adopt" v-on:click="pagename = 'Adopt'">Adopt</a></li>
+            <li><a href="#adopt" v-on:click="pagename = 'Cart'">Cart</a></li>
+          </ul>
+        </nav>
+      </header>
+
+
+<!--home page!-->
 <main v-bind:hidden="pagename != 'Home'" class="animated">
-
-<div class="content"> <!--some images and stuff in here probably-->
-  <h2>Welcome to Café Meow!</h2>
-  <p>Café Meow is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
-  <p>All of our cats are available for adoption. Come down and meet your future feline!</p>
-</div>
+  <div class="content"> <!--content class holds all the meat-->
+    <h2>Welcome to Café Meow!</h2>
+    <img src="images/home.png" alt="scottish fold">
+    <p>Café Meow is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
+    <p>All of our cats are available for adoption. Come down and meet your future feline!</p>
+  </div>
 </main>
 
+
+<!--menu page!-->
 <main v-bind:hidden="pagename != 'Menu'" class="animated">
+  <div class="content"> <!--some images and stuff in here probably-->
+    <h2>Menu</h2>
+    <img src="images/drinks.png">
+    <h3>Drinks</h3>
+    <p><button v-on:click="addToCart ('Coffee',2)">Coffee - $2</button></p>
+    <p><button v-on:click="addToCart ('Tea',1)">Tea - $1</button></p>
+    <p><button v-on:click="addToCart ('Juice',3)">Juice - $3</button></p>
+    <p><button v-on:click="addToCart ('Smoothie',4)">Smoothie - $4</button></p>
 
-<div class="content"> <!--some images and stuff in here probably-->
-  <h2>Menu</h2>
-  <p>Café Meow is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
-  <p>All of our cats are available for adoption. Come down and meet your future feline!</p>
-</div>
+    <h3>Bakery Items</h3>
+    <p><button v-on:click="addToCart ('Fresh Bread',1)">Fresh Bread - $1</button></p>
+    <p><button v-on:click="addToCart ('Muffin',2)">Muffin - $2</button></p>
+    <p><button v-on:click="addToCart ('Pastry',3)">Pastry - $3</button></p>
+    <p><button v-on:click="addToCart ('Donut',1)">Donut - $1</button></p>
+
+    <img src="images/bakery.png">
+    <h3>Cat Treats</h3>
+    <p><button v-on:click="addToCart ('Tuna',2)">Tuna - $2</button></p>
+    <p><button v-on:click="addToCart ('Greenies',2)">Greenies - $3</button></p>
+    <p><button v-on:click="addToCart ('Catnip',1)">Catnip - $1</button></p>
+  </div>
 </main>
 
+
+<!--adopt page!-->
 <main v-bind:hidden="pagename != 'Adopt'" class="animated">
+  <div class="content"> <!--some images and stuff in here probably-->
+    <h2>Adopt</h2>
+    <p>All of our cats here at Café Meow are up for adoption. You can come in and meet them before you decide who to take home! Our adoption fee is $75.00 and you must fill out an application.</p>
+    <h3>Pumpkin</h3>
+    <img src="images/c1.png" alt="pumpkin">
+    <p>Pumpkin is a shy, 9 year old cat relinquished to us with his brother Rowdy when their owner was down on his luck. He tends to keep to himself and hides in the open cat room most of the time. He doesn't pick any fights with the other cats, but he doesn't curl up and hang out with them either. Pumpkin hasn't been exposed to dogs or children. He would do best in a home that is quiet and will let him adjust in his own time. If you feel like you might be that home, stop in to visit with Pumpkin and fill out an adoption application.</p>
 
-<div class="content"> <!--some images and stuff in here probably-->
-  <h2>Adopt</h2>
-  <p>Café Meow is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
-  <p>All of our cats are available for adoption. Come down and meet your future feline!</p>
-</div>
+    <h3>Tapioca</h3>
+    <img src="images/c2.png" alt="tapioca">
+    <p>Tapioca was relinquished to us when her owner found out that she was daibetic. They didn't feel that they could give her the care that she needed to treat this disease. Tapioca receives twice daily insulin injections to control her diabetes. Her new owners will know that she will have to come in routinely for blood sugar checks as well as incur the cost of insulin/syringes for her care. Tapioca is a shy girl, but does warm up in time. She was raised in a household with a child who is now grown and she also gets along well with other cats. If Tapioca's needs aren't too much for you to handle, stop in to visit with this sweet diabetic girl.</p>
+
+    <h3>Mac</h3>
+    <img src="images/c3.png" alt="mac">
+    <p>Mac is a super handsome, awesome kitty. He is between two and three years old and can't wait to find his forevever home. All cat adoptions include spay/neuter, microchip (and registration), vaccinations (including rabies if 16 weeks or older), FIV/FELV testing, flea treatment, and de-worming. Stop by the shop today to meet your new best friend!</p>
+  </div>
 </main>
 
-<main v-bind:hidden="pagename != 'Contact'" class="animated">
 
-<div class="content"> <!--some images and stuff in here probably-->
-  <h2>Contact Us</h2>
-  <p>Café Meow is a celebrated cat café based in St. Louis, Missouri. We serve coffee, drinks, and a wide variety of bakery items. Don't forget to pick up some treats at the counter for our furry friends!</p>
-  <p>All of our cats are available for adoption. Come down and meet your future feline!</p>
-</div>
+<!--cart page!-->
+<main v-bind:hidden="pagename != 'Cart'" class="animated">
+  <div class="content"> <!--some images and stuff in here probably-->
+    <h2>Cart</h2>
+    <ul>
+    <li v-for="item in cart">
+      {{item.name}} {{item.cost}}
+    </li>
+    </ul>
+    <h3>Total: ${{cartTotal}}</h3>
+  </div>
 </main>
 
-<footer class="footer">
-  <div class="social"><h4>Social Media</h4>
-  <ul>
-    <li>Facebook</li>
-    <li>Instagram</li>
-    <li>Twitter</li>
-  </ul>
-</div>
+
+<footer class="footer"> <!--footer for social media and ??? whatever-->
+  <a href="https://www.facebook.com/"><img src="images/fb.png" alt="facebook"></a>
 </footer>
 </div>
 

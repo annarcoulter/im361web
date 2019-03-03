@@ -113,6 +113,30 @@ h3 {
 
 }
 
+/*manu button styles*/
+.button {
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #0294AE;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {background-color: #76CDE4}
+
+.button:active {
+  background-color: #76CDE4;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+                      /*animation styles*/
 @keyframes fadein {
   from {
     opacity: 0;

@@ -10,6 +10,8 @@ var app = new Vue({
     counter:0,
     cart:[]
   },
+
+  //add to cart function
   methods:{
     addToCart: function (name, cost){
       this.cart.push({
@@ -18,6 +20,8 @@ var app = new Vue({
       })
     }
   },
+
+  //gives customer cart total
   computed:{
     cartTotal: function (){
       var total=0;

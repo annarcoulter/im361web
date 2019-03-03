@@ -44,24 +44,25 @@
 <main v-bind:hidden="pagename != 'Menu'" class="animated">
   <div class="content"> <!--some images and stuff in here probably-->
     <h2>Menu</h2>
+    <p>Click the buttons to add items to your cart!</p>
     <img src="images/drinks.png">
     <h3>Drinks</h3>
-    <p><button v-on:click="addToCart ('Coffee',2)">Coffee - $2</button></p>
-    <p><button v-on:click="addToCart ('Tea',1)">Tea - $1</button></p>
-    <p><button v-on:click="addToCart ('Juice',3)">Juice - $3</button></p>
-    <p><button v-on:click="addToCart ('Smoothie',4)">Smoothie - $4</button></p>
+    <p><button class="button" v-on:click="addToCart ('Coffee',2)">Coffee - $2</button></p>
+    <p><button class="button" v-on:click="addToCart ('Tea',1)">Tea - $1</button></p>
+    <p><button class="button" v-on:click="addToCart ('Juice',3)">Juice - $3</button></p>
+    <p><button class="button" v-on:click="addToCart ('Smoothie',4)">Smoothie - $4</button></p>
 
     <h3>Bakery Items</h3>
-    <p><button v-on:click="addToCart ('Fresh Bread',1)">Fresh Bread - $1</button></p>
-    <p><button v-on:click="addToCart ('Muffin',2)">Muffin - $2</button></p>
-    <p><button v-on:click="addToCart ('Pastry',3)">Pastry - $3</button></p>
-    <p><button v-on:click="addToCart ('Donut',1)">Donut - $1</button></p>
+    <p><button class="button" v-on:click="addToCart ('Fresh Bread',1)">Fresh Bread - $1</button></p>
+    <p><button class="button" v-on:click="addToCart ('Muffin',2)">Muffin - $2</button></p>
+    <p><button class="button" v-on:click="addToCart ('Pastry',3)">Pastry - $3</button></p>
+    <p><button class="button" v-on:click="addToCart ('Donut',1)">Donut - $1</button></p>
 
     <img src="images/bakery.png">
     <h3>Cat Treats</h3>
-    <p><button v-on:click="addToCart ('Tuna',2)">Tuna - $2</button></p>
-    <p><button v-on:click="addToCart ('Greenies',2)">Greenies - $3</button></p>
-    <p><button v-on:click="addToCart ('Catnip',1)">Catnip - $1</button></p>
+    <p><button class="button" v-on:click="addToCart ('Tuna',2)">Tuna - $2</button></p>
+    <p><button class="button" v-on:click="addToCart ('Greenies',2)">Greenies - $3</button></p>
+    <p><button class="button" v-on:click="addToCart ('Catnip',1)">Catnip - $1</button></p>
   </div>
 </main>
 
@@ -92,7 +93,7 @@
     <h2>Cart</h2>
     <ul>
     <li v-for="item in cart">
-      {{item.name}} {{item.cost}}
+      {{item.name}}: ${{item.cost}}
     </li>
     </ul>
     <h3>Total: ${{cartTotal}}</h3>
